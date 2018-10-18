@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="A simple example
+123456789private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));...executor.exe"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="a useful tip --- thread pools"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="A simple example
+123456789private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));...executor.exe"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="donscoco"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>a useful tip --- thread pools - donscoco</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">donscoco's blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/donscoco">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>a useful tip --- thread pools</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-10-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/ThreadPool/">#ThreadPool</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="A-simple-example"><a href="#A-simple-example" class="headerlink" title="A simple example"></a>A simple example</h3><hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));</span><br><span class="line">...</span><br><span class="line">executor.execute(new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">        <span class="keyword">function</span>(...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">..</span><br></pre></td></tr></table></figure>
+<h3 id="Benefits-of-using-thread-pools"><a href="#Benefits-of-using-thread-pools" class="headerlink" title="Benefits of using thread pools"></a>Benefits of using thread pools</h3><hr>
+<ul>
+<li>Reduce resource consumption —Reduce the consumption of thread creation and destruction by reusing the created threads.</li>
+<li>Improve response speed</li>
+<li>Improving thread manageability —Monitoring and tuning</li>
+</ul>
+<h3 id="Use-of-thread-pool"><a href="#Use-of-thread-pool" class="headerlink" title="Use of thread pool"></a>Use of thread pool</h3><hr>
+<ol>
+<li><p><strong><em>Creation of thread pool</em></strong><br> we can create a thread pool such like:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new ThreadPoolExecutor(corePoolSize, maximumPoolSize,keepAliveTime, milliseconds,runnableTaskQueue, threadFactory,handler);</span><br></pre></td></tr></table></figure>
+<p> parameter:</p>
+<ul>
+<li><strong>corePoolSize</strong> : When a task is submitted to the thread pool, the thread pool creates a thread to execute the task, even if other idle base threads are able to execute the new tasks. The thread is not created until the number of tasks to be executed is greater than the thread pool’s basic size.</li>
+<li><strong>maximumPoolSize</strong> : The maximum number of threads allowed by thread pool.If the queue is full and the number of threads created is less than the maximum number of threads, the thread pool creates new threads to perform tasks.</li>
+<li><strong>keepAliveTime</strong> : The thread pool’s working threads are free after the idle thread. So if there are many tasks, and each task is executed in a relatively short time, you can adjust this time to improve the utilization of threads.</li>
+<li><strong>milliseconds</strong> : </li>
+<li><strong>runnableTaskQueue</strong> ： Block queue for saving tasks waiting to be excused. It can be as follows:<br>  <em>ArrayBlockingQueue</em><br>  <em>LinkedBlockingQueue</em><br>  <em>SynchronousQueue</em> — A blocking queue that does not store elements. Each insertion operation must wait until another thread calls the removal operation.<br>  <em>PriorityBlockingQueue</em> — An infinite blocking queue with priority</li>
+<li><strong>RejectedExecutionHandler</strong> : When the queue and thread pool are full, indicating that the thread pool is saturated, a strategy must be adopted to handle the new tasks submitted. It can be as follows:<br>  <em>AbortPolicy</em> : throw Exception<br>  <em>CallerRunsPolicy</em> : use only the thread of the caller to run the task.<br>  <em>DiscardOldestPolicy</em> : discard the last task in the queue and perform the current task.<br>  <em>DiscardPolicy</em> : discard</li>
+</ul>
+</li>
+<li><p><strong><em>Submission of the task</em></strong><br> We can use execute to submit a task, but the execute method does not return a value, so it is impossible to determine whether the task was successfully executed by the thread pool. The following code shows that the task entered by the execute method is an instance of a Runnable class.</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">threadsPool.execute(new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p> We can also submit a task using the submit method, which returns a future. We can use the future to determine whether the task is successful, get the return value through the future’s get method, block the get method until the task is complete, and block one using the get (long timeout, TimeUnit unit) method. Return immediately after a period of time, and it is possible that the task is not executed.</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;Object&gt; future = executor.submit(harReturnValuetask);</span><br><span class="line">try &#123;</span><br><span class="line">    Object s = future.get();</span><br><span class="line">&#125; catch (InterruptedException e) &#123;</span><br><span class="line">    // handler interruptedException</span><br><span class="line">&#125; catch (ExecutionException e) &#123;</span><br><span class="line">    // handler executionexception</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    executor.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><strong><em>Closure of thread pool</em></strong><br> We can close the thread pool by calling the shutdown or shutdownNow methods of the thread pool, which traverse the worker threads in the thread pool and then interrupt the thread one by one, so tasks that cannot respond to interruptions may never be terminated.<br> But there are some differences. shutdownNow first sets the state of the thread pool to STOP, then tries to stop all threads executing or suspending tasks, and returns a list of tasks waiting to be executed, whereas shutdownNow just sets the state of the thread pool to SHUTDOWN, and then interrupts all threads that are not executing. Service threads.<br> As long as one of the two closing methods is invoked, the isShutdown method returns true. Calling the isTerminated method returns true when all tasks are closed. As for which method we should invoke to close the thread pool, it should be determined by the task characteristics submitted to the thread pool, usually calling shutdown to close the thread pool, or calling shutdownNow if the task is not necessarily complete.</li>
+</ol>
+<h3 id="Analysis-of-thread-pool"><a href="#Analysis-of-thread-pool" class="headerlink" title="Analysis of thread pool"></a>Analysis of thread pool</h3><hr>
+<ol>
+<li>The main workflow of the thread pool is as follows:<br><img src="http://on-img.com/chart_image/5bc874d0e4b0fe81b66484ac.png" alt=""><br>we can see from the above picture. When a new task is submitted to the thread pool, the processing flow of the thread pool is as follows:<ul>
+<li>First, thread pool determines whether the basic thread pool is full. If it is not full, create a worker thread to perform the task. Full, then enter the next process.</li>
+<li>Secondly, the thread pool determines whether the work queue is full. If not, the new task will be stored in the work queue. Full, then enter the next process.</li>
+<li>Finally, the thread pool determines whether the entire thread pool is full. If it is not full, a new worker thread is created to perform the task, and when it is full, the saturation policy is given to handle the task.</li>
+</ul>
+</li>
+<li><p>Source code</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void execute(Runnable <span class="built_in">command</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">command</span> == null)</span><br><span class="line">        throw new NullPointerException();</span><br><span class="line">    <span class="keyword">if</span> (poolSize &gt;= corePoolSize || !addIfUnderCorePoolSize(<span class="built_in">command</span>)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (runState == RUNNING &amp;&amp; workQueue.offer(<span class="built_in">command</span>)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (runState != RUNNING || poolSize == 0)</span><br><span class="line">            ensureQueuedTaskHandled(<span class="built_in">command</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (!addIfUnderMaximumPoolSize(<span class="built_in">command</span>))</span><br><span class="line">        reject(<span class="built_in">command</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Working thread<br> When a thread pool creates a thread, it encapsulates the thread as a worker thread, which, after executing the task, loops indefinitely to fetch the task in the work queue for execution. We can see this from the run method of Worker:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        Runnable task = firstTask;</span><br><span class="line">        firstTask = null;</span><br><span class="line">        <span class="keyword">while</span> (task != null || (task = getTask()) != null) &#123;</span><br><span class="line">            runTask(task);</span><br><span class="line">            task = null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        workerDone(this);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Rational-configuration-of-thread-pool"><a href="#Rational-configuration-of-thread-pool" class="headerlink" title="Rational configuration of thread pool"></a>Rational configuration of thread pool</h3><hr>
+<p>To configure thread pools reasonably, we must first analyze the characteristics of tasks, which can be analyzed from the following aspects:</p>
+<ul>
+<li><p><strong><em>Nature of task</em></strong> : CPU intensive tasks, IO intensive tasks and hybrid tasks.<br>  Tasks with different tasks can be processed separately from different sizes of thread pools. CPU intensive tasks are configured as small as possible, such as thread pools that configure Ncpu+1 threads. IO-intensive tasks configure as many threads as possible, such as 2 * Ncpu, because threads are not always executing tasks. Hybrid tasks, if they can be split, are split into a CPU-intensive task and an IO-intensive task. As long as the time difference between the two tasks is not too large, the throughput after decomposition is higher than that of serial execution. If the time difference between the two tasks is too large, it is not necessary. Decompose. We can get the CPU number of the current device through the Runtime.getRuntime ().AvailableProcessors () method.</p>
+</li>
+<li><p><strong><em>Priority of tasks</em></strong> :<br>  Tasks with different priorities can be handled using priority queue PriorityBlockingQueue. It allows high-priority tasks to be executed first, and it is important to note that low-priority tasks may never be executed if high-priority tasks are always submitted to the queue.</p>
+</li>
+<li><p><strong><em>Task execution time</em></strong> :<br>  Tasks with different execution times can be handled by thread pools of different sizes, or priority queues can be used to allow tasks with short execution times to execute first.</p>
+</li>
+<li><p><strong><em>Task dependency</em></strong> : Is it dependent on other system resources, such as database connection?<br>  Depending on the database connection pool task, because threads need to wait for the database to return the results after submitting SQL, if the longer the wait, the longer the CPU idle time, then the number of threads should be set, so as to better use the CPU.</p>
+</li>
+</ul>
+<p>It is suggested that bounded queues be used. Bounded queues can increase the stability and early warning capability of the system, and can be set up as large as needed, such as several thousand.It is suggested that bounded queues be used. Bounded queues can increase the stability and early warning capability of the system, and can be set up as large as needed, such as several thousand. If unbounded queues are used, if the system goes wrong, memory may be crammed, affecting other systems.</p>
+<h3 id="Thread-pool-monitoring"><a href="#Thread-pool-monitoring" class="headerlink" title="Thread pool monitoring"></a>Thread pool monitoring</h3><hr>
+<p>Monitor the parameters provided by thread pool. There are properties in the thread pool that can be used when monitoring thread pools.</p>
+<ul>
+<li><strong><em>taskCount</em></strong><br>  The number of tasks that thread pools need to perform.</li>
+<li><strong><em>completedTaskCount</em></strong><br>  The number of tasks that the thread pool has completed in the process of running. Less than or equal to taskCount.</li>
+<li><strong><em>largestPoolSize</em></strong><br>  The maximum number of threads that thread pool has ever created. This data can be used to see if the line pool is full.</li>
+<li><strong><em>getPoolSize</em></strong><br>  The number of threads in the thread pool.<br>-<strong><em>getActiveCount</em></strong><br>  Gets the number of threads of activity.</li>
+</ul>
+<p>Monitor by extending thread pool. By inheriting the thread pool and overwriting the beforeExecute, afterExecute, and terminated methods of the thread pool, we can do something before, after, and before the thread pool is closed. For example, the average execution time, maximum execution time and minimum execution time of monitoring tasks. These methods are empty methods in the online pool. Such as:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protected void beforeExecute(Thread t, Runnable r) &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="More"><a href="#More" class="headerlink" title="More"></a>More</h3><hr>
+<p>Transmission gate : <a href="http://ifeve.com/java-concurrency-thread-directory/" target="_blank" rel="noopener">ifeve</a><br>Transmission gate : <a href="https://www.jianshu.com/p/ade771d2c9c0" target="_blank" rel="noopener">a tiny husky</a><br>Transmission gate : <a href="https://www.jianshu.com/u/7355b41938a6" target="_blank" rel="noopener">jonny</a><br>Transmission gate : <a href="https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ThreadPoolExecutor.html" target="_blank" rel="noopener">Oracle</a><br>Transmission gate : <a href="https://blog.csdn.net/qq_25806863/article/details/71126867" target="_blank" rel="noopener">csdn</a><br>Transmission gate : <a href="https://segmentfault.com/a/1190000011527245" target="_blank" rel="noopener">csdn</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/donscoco" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
