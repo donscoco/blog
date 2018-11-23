@@ -432,11 +432,11 @@
 </ul>
 <h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><hr>
 <p><img src="https://image.ibb.co/dFEACA/image.png" alt="img"></p>
-<h5 id="可缓存性"><a href="#可缓存性" class="headerlink" title="可缓存性"></a>可缓存性</h5><p>Cache-Control:<br>http请求所经过的路径中，包括经过的一些http代理服务器都可以对http的内容进行缓存的操作<br>public 浏览器，代理服务器都进行缓存<br>private 只有浏览器缓存<br>no-cache 不缓存</p>
-<h5 id="到期"><a href="#到期" class="headerlink" title="到期"></a>到期</h5><p>max-age=<seconds><br>设置缓存时间；过期之后浏览器才会再次发送请求到服务端<br>s-maxage=<seconds><br>代理服务器读取的缓存时间</seconds></seconds></p>
-<h5 id="重新验证"><a href="#重新验证" class="headerlink" title="重新验证"></a>重新验证</h5><p>must-revalidate 在max-age 过期后用于验证<br>proxy-revalidate 用于缓存服务器的过期验证</p>
-<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>no-store<br>no-transform </p>
-<h5 id="验证头"><a href="#验证头" class="headerlink" title="验证头"></a>验证头</h5><p><code>Last-Modified</code>  上次修改时间<br><code>Etag</code>数据签名:常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存;</p>
+<h4 id="可缓存性"><a href="#可缓存性" class="headerlink" title="可缓存性"></a>可缓存性</h4><p>Cache-Control:<br>http请求所经过的路径中，包括经过的一些http代理服务器都可以对http的内容进行缓存的操作<br>public 浏览器，代理服务器都进行缓存<br>private 只有浏览器缓存<br>no-cache 不缓存</p>
+<h4 id="到期"><a href="#到期" class="headerlink" title="到期"></a>到期</h4><p>max-age=<seconds><br>设置缓存时间；过期之后浏览器才会再次发送请求到服务端<br>s-maxage=<seconds><br>代理服务器读取的缓存时间</seconds></seconds></p>
+<h4 id="重新验证"><a href="#重新验证" class="headerlink" title="重新验证"></a>重新验证</h4><p>must-revalidate 在max-age 过期后用于验证<br>proxy-revalidate 用于缓存服务器的过期验证</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>no-store<br>no-transform </p>
+<h4 id="验证头"><a href="#验证头" class="headerlink" title="验证头"></a>验证头</h4><p><code>Last-Modified</code>  上次修改时间<br><code>Etag</code>数据签名:常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存;</p>
 <hr>
 <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><hr>
 <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>通过Set-Cookie设置      e.g: ‘Set-Cookie’:’id=123’</p>
