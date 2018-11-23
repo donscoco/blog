@@ -436,8 +436,9 @@
 <h5 id="到期"><a href="#到期" class="headerlink" title="到期"></a>到期</h5><p>max-age=<seconds><br>设置缓存时间；过期之后浏览器才会再次发送请求到服务端<br>s-maxage=<seconds><br>代理服务器读取的缓存时间</seconds></seconds></p>
 <h5 id="重新验证"><a href="#重新验证" class="headerlink" title="重新验证"></a>重新验证</h5><p>must-revalidate 在max-age 过期后用于验证<br>proxy-revalidate 用于缓存服务器的过期验证</p>
 <h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>no-store<br>no-transform </p>
-<h5 id="验证头"><a href="#验证头" class="headerlink" title="验证头"></a>验证头</h5><p>Last-Modified  上次修改时间</p>
-<h2 id="Etag-数据签名；常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存"><a href="#Etag-数据签名；常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存" class="headerlink" title="Etag 数据签名；常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存"></a>Etag 数据签名；常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存</h2><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><hr>
+<h5 id="验证头"><a href="#验证头" class="headerlink" title="验证头"></a>验证头</h5><p><code>Last-Modified</code>  上次修改时间<br><code>Etag</code>数据签名:常用的数据签名是对内容进行一个哈希计算；配合if-Match或者if-Non-Match使用对比资源签名判断是否使用缓存;</p>
+<hr>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><hr>
 <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>通过Set-Cookie设置      e.g: ‘Set-Cookie’:’id=123’</p>
 <ul>
 <li>cookie结构：cookie是键值对的形式，可以设置多个</li>
