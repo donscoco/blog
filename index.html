@@ -468,11 +468,10 @@
 <li><code>Content-Encoding</code> 声明我服务端返回的数据是什么编码</li>
 <li><code>Content-Language</code> 表示返回的语言类型</li>
 </ul>
-<hr>
 <h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><h4 id="服务端示例"><a href="#服务端示例" class="headerlink" title="服务端示例"></a>服务端示例</h4><p><img src="https://image.ibb.co/dE7m2A/image.png" alt="img"></p>
 <h4 id="客户端访问http-localhost-8080后跳转到http-localhost-8080-new展示"><a href="#客户端访问http-localhost-8080后跳转到http-localhost-8080-new展示" class="headerlink" title="客户端访问http://localhost:8080后跳转到http://localhost:8080/new展示"></a>客户端访问<a href="http://localhost:8080后跳转到http://localhost:8080/new展示" target="_blank" rel="noopener">http://localhost:8080后跳转到http://localhost:8080/new展示</a></h4><p><img src="https://image.ibb.co/bOHB2A/image.png" alt="img"><br>这里要状态吗和Location一起使用，状态码设置200依然不会跳转</p>
-<h4 id="301和302区别"><a href="#301和302区别" class="headerlink" title="301和302区别"></a>301和302区别</h4><p>301指永久跳转，302是临时跳转<br>浏览器下次再遇到请求那个会跳转301的路径时，会自动再加上跳转后的路径，不用再去经过服务器处理301重定向<br>告诉浏览器下一次再出现这个路径的访问的时候，直接在浏览器这边把他变成一个新的路径就可以了，不用经过服务器再去指定一个新的location</p>
-<h2 id="而且还会默认在浏览器留下缓存"><a href="#而且还会默认在浏览器留下缓存" class="headerlink" title="而且还会默认在浏览器留下缓存"></a>而且还会默认在浏览器留下缓存</h2><h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><hr>
+<h4 id="301和302区别"><a href="#301和302区别" class="headerlink" title="301和302区别"></a>301和302区别</h4><p>301指永久跳转，302是临时跳转<br>浏览器下次再遇到请求那个会跳转301的路径时，会自动再加上跳转后的路径，不用再去经过服务器处理301重定向<br>告诉浏览器下一次再出现这个路径的访问的时候，直接在浏览器这边把他变成一个新的路径就可以了，不用经过服务器再去指定一个新的location<br>而且还会默认在浏览器留下缓存</p>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><hr>
 <p><strong><strong>HTTP概念</strong></strong>：超文本传输协议（HTTP）是用于传输诸如HTML的超媒体文档的应用层协议。它被设计用于Web浏览器和Web服务器之间的通信，但它也可以用于其他目的。 HTTP遵循经典的客户端-服务端模型，客户端打开一个连接以发出请求，然后等待它收到服务器端响应。 HTTP是无状态协议，意味着服务器不会在两个请求之间保留任何数据（状态）。虽然通常基于TCP / IP层，但可以在任何可靠的传输层上使用;也就是说，一个不会静默丢失消息的协议，如UDP。<br><strong><strong>HTTPS概念</strong></strong>：HTTP Strict Transport Security (通常简称为HSTS) 是一个安全功能，它告诉浏览器只能通过HTTPS访问当前资源, 禁止HTTP方式.<br>Strict Transport Security解决了这个问题；只要你通过HTTPS请求访问银行网站，并且银行网站配置好Strict Transport Security，你的浏览器知道自动使用HTTPS请求，这可以阻止黑客的中间人攻击的把戏。<br>HTTP的包是明文传输<br>HTTPS是在HTTP基础上进行加密</p>
 <ul>
 <li>TTPS协议需要到CA申请证书，一般免费证书很少，需要交费。</li>
