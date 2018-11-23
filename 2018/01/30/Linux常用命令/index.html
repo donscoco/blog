@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多命令可访问 http://man.linuxde.net/ 命令格式命令 [选项] [参数]个别命令可以不遵循这种格式 ls [选项] [目标文件或目录]查询目录中的内容  ls -als -l 显示文件详细信息ls -i 显示文件的inode系统每个文件或文件夹都有他自己的inode号，查找根据inode号查 cd 切换目">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:url" content="https://donscoco.github.io/2018/01/30/Linux常用命令/index.html">
+<meta property="og:site_name" content="donscoco">
+<meta property="og:description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多命令可访问 http://man.linuxde.net/ 命令格式命令 [选项] [参数]个别命令可以不遵循这种格式 ls [选项] [目标文件或目录]查询目录中的内容  ls -als -l 显示文件详细信息ls -i 显示文件的inode系统每个文件或文件夹都有他自己的inode号，查找根据inode号查 cd 切换目">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://image.ibb.co/fqrVxA/ls.png">
+<meta property="og:image" content="https://image.ibb.co/c6iqVV/ls.png">
+<meta property="og:image" content="https://image.ibb.co/htd5fV/image.png">
+<meta property="og:image" content="https://image.ibb.co/kD8AEq/2.png">
+<meta property="og:image" content="https://image.ibb.co/cfXj7A/image.png">
+<meta property="og:image" content="https://image.ibb.co/nLft0V/2.png">
+<meta property="og:image" content="https://image.ibb.co/jYdSSA/image.png">
+<meta property="og:image" content="https://image.ibb.co/ct5VfV/image.png">
+<meta property="og:image" content="https://image.ibb.co/gNpqfV/image.png">
+<meta property="og:updated_time" content="2018-11-23T11:31:36.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令">
+<meta name="twitter:description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多命令可访问 http://man.linuxde.net/ 命令格式命令 [选项] [参数]个别命令可以不遵循这种格式 ls [选项] [目标文件或目录]查询目录中的内容  ls -als -l 显示文件详细信息ls -i 显示文件的inode系统每个文件或文件夹都有他自己的inode号，查找根据inode号查 cd 切换目">
+<meta name="twitter:image" content="https://image.ibb.co/fqrVxA/ls.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://donscoco.github.io/2018/01/30/Linux常用命令/"/>
+
+
+
+
+
+  <title>Linux常用命令 | donscoco</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">donscoco</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://donscoco.github.io/2018/01/30/Linux常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="donscoco">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Misaka.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="donscoco">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux常用命令</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-30T00:00:00+08:00">
+                2018-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/30/Linux常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/30/Linux常用命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记<br>更多命令可访问 <a href="http://man.linuxde.net/" target="_blank" rel="noopener">http://man.linuxde.net/</a></p>
+<h1 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h1><p>命令 [选项] [参数]<br>个别命令可以不遵循这种格式</p>
+<p>ls [选项] [目标文件或目录]<br>查询目录中的内容 </p>
+<p>ls -a<br>ls -l 显示文件详细信息<br><img src="https://image.ibb.co/fqrVxA/ls.png" alt="img"><br>ls -i 显示文件的inode<br>系统每个文件或文件夹都有他自己的inode号，查找根据inode号查<br><img src="https://image.ibb.co/c6iqVV/ls.png" alt="img"></p>
+<p>cd 切换目录<br>pwd 显示当前路径</p>
+<p>Ctrl c<br>ctrl l<br>tab 补全</p>
+<p>#文件与目录处理命令</p>
+<h2 id="建立目录"><a href="#建立目录" class="headerlink" title="建立目录"></a>建立目录</h2><p>mkdir -p [目录名] 建立目录<br>-p 递归创建</p>
+<h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><p>cd [目录]<br>cd ~<br>cd ..<br>cd .<br>cd -</p>
+<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><p>cd ./dons 进入当前目录下的dons目录<br>cd ../home/dons进入上一级目录下的home的dons</p>
+<h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><p>cd /home/dons</p>
+<h2 id="查询目录所在位置"><a href="#查询目录所在位置" class="headerlink" title="查询目录所在位置"></a>查询目录所在位置</h2><p>pwd –print working directory</p>
+<h2 id="删除空目录"><a href="#删除空目录" class="headerlink" title="删除空目录"></a>删除空目录</h2><p>rmdir [目录名]<br>remove empty directory</p>
+<h2 id="删除文件或目录"><a href="#删除文件或目录" class="headerlink" title="删除文件或目录"></a>删除文件或目录</h2><p>rm -rf [文件或目录]<br>-r 删除目录<br>-f 强制删除<br><strong><strong>小心删除  rm -rf /</strong></strong>删除掉以/开头的，rm -rf 可以让系统“自杀”</p>
+<h2 id="复制命令"><a href="#复制命令" class="headerlink" title="复制命令"></a>复制命令</h2><p>cp [选项] [原文件或目录] [目标目录]<br>如果目标目录不加文件名，则原名复制；eg：cp test /tmp/<br>反之，则是等名复制；eg：cp -a test /tmp/new_test<br>-r 复制目录,不加-r 默认复制文件<br>-p 带文件属性复制，不加复制的时间是复制的时候的文件<br>-d 若源文件是链接文件，则复制链接属性<br>-a 相当于上面 -pdr</p>
+<h2 id="剪切或改名命令"><a href="#剪切或改名命令" class="headerlink" title="剪切或改名命令"></a>剪切或改名命令</h2><p>mv [源文件或目录] [目标目录]</p>
+<h2 id="linux-链接命令"><a href="#linux-链接命令" class="headerlink" title="linux 链接命令"></a>linux 链接命令</h2><p>ln -s [原文件] [目标文件]<br>link<br>-s 创建软连接</p>
+<h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><p>拥有相同的i 节点和存储block快，可以看做是同一个文件<br>可通过i节点识别<br>不能跨分区<br>不能针对目录使用<br><img src="https://image.ibb.co/htd5fV/image.png" alt="img"><br>就算x没了，硬链接也还是能指到id，相当于一个文件，可以使用<code>ls -i</code>可以发现两个id都是一样的<br><img src="https://image.ibb.co/kD8AEq/2.png" alt="img"><br>图中 的 2 表示 这个文件有多少个链接数</p>
+<h3 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h3><p>类似windows的快捷方式<br>软链接拥有自己的block块，但数据块中只保存原文件的文件名和i节点号，没有实际数据<br>例如 lrwxrwxrwx 中的l 就是指链接文件<br>修改任意文件，另一个都改变<br>删除原文件，软链接不能使用<br><img src="https://image.ibb.co/cfXj7A/image.png" alt="img"><br><img src="https://image.ibb.co/nLft0V/2.png" alt="img"></p>
+<h1 id="搜索命令"><a href="#搜索命令" class="headerlink" title="搜索命令"></a>搜索命令</h1><h2 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h2><h3 id="locate-文件名"><a href="#locate-文件名" class="headerlink" title="locate [文件名]"></a>locate [文件名]</h3><p>在后台数据库中按文件名搜索，搜索比find快；后台数据库—/var/lib/mlocate 有的版本可能叫其他的例如 slocate locatedb<br>新建的文件没有记录进入后台数据库，因为后台数据库不是实时更新，也可以立刻更新   <code>updatadb</code><br>缺点：只能搜索文件名</p>
+<p>更多：文件搜索规则 /etc/updatedb.conf 配置文件</p>
+<h3 id="find-搜索范围-搜索条件"><a href="#find-搜索范围-搜索条件" class="headerlink" title="find [搜索范围] [搜索条件]"></a>find [搜索范围] [搜索条件]</h3><p>（慢）遍历整个根<br>-name  find /home -name ‘dons’<br>-iname 不区分大小写<br>-user 按所有者搜索<br>-nouser 搜索没有所有者的文件，一般用来清理垃圾文件<br>-mtime +10 搜索十天前修改的文件<br>-atime +10 搜索十天前访问的文件<br>-ctime +10 搜索十天前修改属性的文件<br>这里+10 10 -10 分别是  今天1月20号 1/10号之前的，1/10当天，1/10号-1/20</p>
+<p>-size [-25k|25k|+25k] 查找文件大小是小于25k的 等于25k的 大于25k的<br>-size +20k -a -50k 查找文件大小是大于20k并且小于50k的文件  <code>-a</code>:and  <code>-o</code>:or<br>-inum 558528 查找 inode 节点号为 558528 的文件</p>
+<h3 id="linux-中的通配符"><a href="#linux-中的通配符" class="headerlink" title="linux 中的通配符"></a>linux 中的通配符</h3><p><code>*</code>匹配任意内容<br><code>?</code>匹配任意字符<br><code>[]</code>匹配任意中括号内的字符<br><code></code><br>更多详见<a href="https://abcfy2.gitbooks.io/linux_basic/content/first_sense_for_linux/command_learning/wildcard.html" target="_blank" rel="noopener">https://abcfy2.gitbooks.io/linux_basic/content/first_sense_for_linux/command_learning/wildcard.html</a></p>
+<h2 id="命令搜索命令"><a href="#命令搜索命令" class="headerlink" title="命令搜索命令"></a>命令搜索命令</h2><p>whereis<br>-b:只查找可执行命令<br>-m:只查找帮助文档<br>which<br>和whereis 一样，多加了别名</p>
+<p>更多 whoami whatis whereis</p>
+<h2 id="字符串搜索命令"><a href="#字符串搜索命令" class="headerlink" title="字符串搜索命令"></a>字符串搜索命令</h2><p>grep [选项] 字符串 文件名<br>在文件中匹配符合条件的字符串<br>-i 忽略大小写<br>-v 排除指定字符串<br>如果想要使用模糊去匹配需要使用正则表达式，find中使用通配符</p>
+<p>更多：管道 cat test.log | grep “2018-1-30” </p>
+<h1 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h1><p>man [命令]<br>manul </p>
+<h1 id="压缩与解压缩"><a href="#压缩与解压缩" class="headerlink" title="压缩与解压缩"></a>压缩与解压缩</h1><p>常用压缩格式 .zip .gz .bz2  .tar.gz .tar.bz2<br>zip 压缩文件名 原文件  – 压缩文件<br>zip -r 压缩文件名 原目录  – 压缩目录<br>unzip  解压缩文件</p>
+<p>gzip 原文件 – 压缩为.gz 格式；原文件会消失<br>gzip -c 原文件 &gt; 压缩文件 – 压缩为.gz 个格式；原文件保留<br>gzip -r 原文件<br>gzip -d 压缩文件  – 解压缩文件<br>gunzip 压缩文件 – 解压缩文件</p>
+<p>bzip2 原文件  –压缩为.bz2格式，不保留原文件<br>bzip2 -k 原文件   –压缩后保留原文件<br>bzip2 -d 压缩文件  – 解压缩文件<br>bunzip2 压缩文件 – 解压缩  -k 保留压缩文件</p>
+<p>.tar.gz .tar.bz2  这类文件是因为gz，bz2打包不能连着文件夹一起打包，所以先打包成了.tar 再将这个文件打包成.gz<br>打包命令 tar<br>tar -cvf 打包文件名 源文件   – 打包成.tar<br>-c 打包<br>-v 显示过程<br>-f 指定打包后的文件<br>-x 解打包<br>tar -xvf 打包文件<br>-zcvf 直接压缩为 .tar.gz<br>-zxvf 直接解压缩 .tar.gz<br>-jcvf 直接压缩为 .tar.bz2<br>-jxvf 直接解压缩 .tar.bz2</p>
+<h1 id="linxu常见目录作用"><a href="#linxu常见目录作用" class="headerlink" title="linxu常见目录作用"></a>linxu常见目录作用</h1><hr>
+<p>/ 根目录<br>/bin 命令保存目录（普通用户权限）<br>/sbin 命令保存目录（root权限）<br>/boot 启动目录，包含启动相关文件，和开机有关<br>/dev 设备文件保存目录<br>/etc 配置文件保存目录<br>/home 普通用户家目录<br>/lib 系统库保存目录<br>/mnt 系统挂载目录<br>/media 挂载目录（常用于光盘挂载）<br>/root 超级用户家目录<br>/tmp 临时目录<br>/proc 直接写入内存的<br>/sys 直接写入内存的<br>/usr 系统软件资源目录<br>/var 系统相关文档内容</p>
+<h1 id="linux-关机与重启"><a href="#linux-关机与重启" class="headerlink" title="linux 关机与重启"></a>linux 关机与重启</h1><h2 id="关机与重启"><a href="#关机与重启" class="headerlink" title="关机与重启"></a>关机与重启</h2><p>shutdowm [选项] 时间<br>-c: 取消前一个关机命令<br>-h: 关机<br>-r: 重启</p>
+<p>时间的格式：<code>05:30</code> 凌晨5点30分 时间可以  <code>now</code><br>执行之后无法执行其他命令，但是可以将任务放到后台：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -r 05:30 &amp;</span><br></pre></td></tr></table></figure></p>
+<p>更多重启：<code>reboot</code>,<code>init 6</code><br>更多关机：不推荐使用，不会保存当前状态等信息 <code>halt</code> <code>poweroff</code> <code>init 0</code><br>为什么 init 0  init 6 ？<br>这有关于linux系统运行级别<br><a href="https://www.ibm.com/developerworks/cn/linux/l-lpic1-v3-101-3/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-lpic1-v3-101-3/index.html</a></p>
+<h2 id="退出登录"><a href="#退出登录" class="headerlink" title="退出登录"></a>退出登录</h2><p>logout</p>
+<h1 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h1><h2 id="什么是挂载？"><a href="#什么是挂载？" class="headerlink" title="什么是挂载？"></a>什么是挂载？</h2><p>在linux中所有的存储设备，都必须挂载后才能正常使用，windows中用字母作为系统盘符，linux中用目录作为盘符；所以挂载其实就是分配盘符，只是分配的盘符叫挂载点，分配的过程叫挂载<br>硬盘的分区是第一次设置好挂载后，以后每次启动机器自动挂载的<br>而光盘，U盘等存储设备必须人为地来挂载</p>
+<h2 id="查询与自动挂载"><a href="#查询与自动挂载" class="headerlink" title="查询与自动挂载"></a>查询与自动挂载</h2><p>mount 查询系统中已挂载的设备<br>mount -a 依据配置文件/etc/fstab 的内容，自动挂载</p>
+<p><img src="https://image.ibb.co/jYdSSA/image.png" alt="img"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/dev/vda1 on / <span class="built_in">type</span> ext3 (rw,noatime,acl,user_xattr)</span><br><span class="line">proc on /proc <span class="built_in">type</span> proc (rw)</span><br><span class="line">sysfs on /sys <span class="built_in">type</span> sysfs (rw)</span><br><span class="line">devpts on /dev/pts <span class="built_in">type</span> devpts (rw,mode=0620,gid=5)</span><br><span class="line">none on /proc/sys/fs/binfmt_misc <span class="built_in">type</span> binfmt_misc (rw)</span><br></pre></td></tr></table></figure>
+<p><code>/dev/vda1 on / type ext3 (rw,noatime,acl,user_xattr)</code>中<br><code>dev</code>是硬件设备目录<br><code>vd</code> 是接口 还有 <code>sd</code>等<br><code>a</code> 代表硬盘<br><code>5</code> 是分区<br><code>on</code> 是挂载到<br><code>/</code> 挂载到根分区<br><code>ext3</code> 是文件系统<br><code>(rw,noatime,acl,user_xattr)</code>是权限</p>
+<p><code>proc on /proc type proc (rw)</code>和<code>sysfs on /sys type sysfs (rw)</code>中<br><code>proc</code>和<code>sysfs</code>是内存的挂载点，内核自己挂载的，<strong><strong>不要乱动！！！</strong></strong></p>
+<h3 id="自动挂载配置"><a href="#自动挂载配置" class="headerlink" title="自动挂载配置"></a>自动挂载配置</h3><p>/etc/fstab 文件是系统自动挂载配置</p>
+<h2 id="挂载命令格式"><a href="#挂载命令格式" class="headerlink" title="挂载命令格式"></a>挂载命令格式</h2><p>mount [-t 文件系统] [-o 特殊选项] 设备文件名 挂载点<br>-t 文件系统： 加入文件系统类型来制指定挂载类型，可以是ext3，ext4，iso9660等文件系统<br>-o 特殊选项： 可以指定挂载的额外选项<br><img src="https://image.ibb.co/ct5VfV/image.png" alt="img"><br>eg：<br><code>mount -o remount,noexec /home/</code> 这里的<code>noexec</code>会使得挂载为不能执行，坑人专用 <strong><strong>执行完记得改回来！！！</strong></strong><br><code>mount -o remount,exec /home/</code><br>这里没有写 设备文件名 <code>/dev/vda5</code> 是因为 自动挂载配置文件里面已经能自动找到对应的 名字了<br>对于没有在/etc/fstab 文件中的，例如 U盘，光盘等就要写上设备文件路径</p>
+<h2 id="挂载光盘"><a href="#挂载光盘" class="headerlink" title="挂载光盘"></a>挂载光盘</h2><ol>
+<li>建立挂载点 <code>mkdir /mnt/cdrom/</code></li>
+<li>挂载光盘 <code>mount -t iso9660 /dev/cdrom /mnt/cdrom</code> 或 <code>mount /dev/sr0 /mnt/cdrom</code> 省略文件系统选项，因为系统默认知道光盘的文件系统是 iso9660<br>因为挂载默认会去执行读写权限，而光盘是不能写的，所以挂载光盘时候会出现<br><code>mount: block device /dev/sr0 is write-protected, mounting read-only</code> 这是正常的。</li>
+</ol>
+<h2 id="卸载命令"><a href="#卸载命令" class="headerlink" title="卸载命令"></a>卸载命令</h2><p>umount 设备名或者挂载点<br>umount /dev/sr0<br>umount /mnt/cdrom</p>
+<h2 id="挂载U盘"><a href="#挂载U盘" class="headerlink" title="挂载U盘"></a>挂载U盘</h2><p><code>fdisk -l</code>   查看U盘设备文件名;一般是 /dev/sdb1<br><code>mount -t vfat /dev/sdb1 /mnt/usb/</code><br>linux 默认是不支持NTFS文件系统的;想使用需要去往内核装NTFS驱动；或者安装fts-3G</p>
+<h1 id="linux用户登陆查看命令"><a href="#linux用户登陆查看命令" class="headerlink" title="linux用户登陆查看命令"></a>linux用户登陆查看命令</h1><h2 id="w"><a href="#w" class="headerlink" title="w"></a><code>w</code></h2><p><img src="https://image.ibb.co/gNpqfV/image.png" alt="img"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">19:10:04 up  8:17,  1 user,  load average: 0.00, 0.00, 0.00</span><br><span class="line">USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">root     pts/0    58.248.229.155   19:10    0.00s  0.00s  0.00s w</span><br></pre></td></tr></table></figure></p>
+<p><code>19:10:04 up  8:17,  1 user,  load average: 0.00, 0.00, 0.00</code>中<br><code>19:10:04</code> 当前系统时间<br><code>up  8:17</code> 系统到现在运行了多少个小时<br><code>1 user</code> 总登陆了1个用户<br><code>load average: 0.00, 0.00, 0.00</code> 系统在 1分钟 5分钟 15分钟的 平均负载<br><code>pts/0</code> 登陆方式是远程<br><code>58.248.229.155</code> 从哪个ip过来的<br>USER：登陆的用户名<br>TTY：登陆终端<br>FROM：从哪个IP地址登陆<br>LOGIN：登陆时间<br>IDLE：用户闲置时间<br>JCPU：指的是和该终端连接的所有进程占用的时间。这个时间里并不包括过去的后台作业时间，但包含当前正在运行的后台作业占用的时间<br>PCPU：当前进程所占用的时间<br>WHAT：当前正在运行的命令</p>
+<h2 id="last"><a href="#last" class="headerlink" title="last"></a>last</h2><p>可以查看系统中所有的用户登陆信息和系统重启信息<br>这个可以发现有黑客进入了你的计算机<br><code>last</code>命令默认读取的是 /var/log/wtmp 文件数据<br>lastlog 记录的是系统所有用户的最后一次登陆<br><code>lastlog</code> 命令默认读取的是 /var/log/lastlog 文件</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/Misaka.jpg"
+               alt="donscoco" />
+          <p class="site-author-name" itemprop="name">donscoco</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://donscoco.github.io" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="your-twitter-url" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="your-weibo-url" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="donscoco@gmail.com" target="_blank" title="Google">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="286563721@qq.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令格式"><span class="nav-number">2.</span> <span class="nav-text">命令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立目录"><span class="nav-number">2.1.</span> <span class="nav-text">建立目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换目录"><span class="nav-number">2.2.</span> <span class="nav-text">切换目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径"><span class="nav-number">2.2.1.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对路径"><span class="nav-number">2.2.2.</span> <span class="nav-text">绝对路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询目录所在位置"><span class="nav-number">2.3.</span> <span class="nav-text">查询目录所在位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除空目录"><span class="nav-number">2.4.</span> <span class="nav-text">删除空目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除文件或目录"><span class="nav-number">2.5.</span> <span class="nav-text">删除文件或目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制命令"><span class="nav-number">2.6.</span> <span class="nav-text">复制命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪切或改名命令"><span class="nav-number">2.7.</span> <span class="nav-text">剪切或改名命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-链接命令"><span class="nav-number">2.8.</span> <span class="nav-text">linux 链接命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬链接"><span class="nav-number">2.8.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软链接"><span class="nav-number">2.8.2.</span> <span class="nav-text">软链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜索命令"><span class="nav-number">3.</span> <span class="nav-text">搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">3.1.</span> <span class="nav-text">文件搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#locate-文件名"><span class="nav-number">3.1.1.</span> <span class="nav-text">locate [文件名]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-搜索范围-搜索条件"><span class="nav-number">3.1.2.</span> <span class="nav-text">find [搜索范围] [搜索条件]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-中的通配符"><span class="nav-number">3.1.3.</span> <span class="nav-text">linux 中的通配符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令搜索命令"><span class="nav-number">3.2.</span> <span class="nav-text">命令搜索命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串搜索命令"><span class="nav-number">3.3.</span> <span class="nav-text">字符串搜索命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#帮助命令"><span class="nav-number">4.</span> <span class="nav-text">帮助命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#压缩与解压缩"><span class="nav-number">5.</span> <span class="nav-text">压缩与解压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linxu常见目录作用"><span class="nav-number">6.</span> <span class="nav-text">linxu常见目录作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-关机与重启"><span class="nav-number">7.</span> <span class="nav-text">linux 关机与重启</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关机与重启"><span class="nav-number">7.1.</span> <span class="nav-text">关机与重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退出登录"><span class="nav-number">7.2.</span> <span class="nav-text">退出登录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挂载命令"><span class="nav-number">8.</span> <span class="nav-text">挂载命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是挂载？"><span class="nav-number">8.1.</span> <span class="nav-text">什么是挂载？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询与自动挂载"><span class="nav-number">8.2.</span> <span class="nav-text">查询与自动挂载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动挂载配置"><span class="nav-number">8.2.1.</span> <span class="nav-text">自动挂载配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载命令格式"><span class="nav-number">8.3.</span> <span class="nav-text">挂载命令格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载光盘"><span class="nav-number">8.4.</span> <span class="nav-text">挂载光盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载命令"><span class="nav-number">8.5.</span> <span class="nav-text">卸载命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载U盘"><span class="nav-number">8.6.</span> <span class="nav-text">挂载U盘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux用户登陆查看命令"><span class="nav-number">9.</span> <span class="nav-text">linux用户登陆查看命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#w"><span class="nav-number">9.1.</span> <span class="nav-text">w</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">9.2.</span> <span class="nav-text">last</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">donscoco</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://donscoco.github.io/2018/01/30/Linux常用命令/';
+          this.page.identifier = '2018/01/30/Linux常用命令/';
+          this.page.title = 'Linux常用命令';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
