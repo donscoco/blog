@@ -445,6 +445,261 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://donscoco.github.io/2018/11/24/Linux软件安装管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="donscoco">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Misaka.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="donscoco">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/24/Linux软件安装管理/" itemprop="url">Linux软件安装管理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-24T00:00:00+08:00">
+                2018-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/24/Linux软件安装管理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/24/Linux软件安装管理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h1><h2 id="软件包分类"><a href="#软件包分类" class="headerlink" title="软件包分类"></a>软件包分类</h2><h3 id="源码包"><a href="#源码包" class="headerlink" title="源码包"></a>源码包</h3><p>linux 一开始的包就是 .tar.gz 的源码包，打开可以看到里面是纯C语言的源码包<br>优点和缺点：</p>
+<ul>
+<li>开源</li>
+<li>可以自由选择功能</li>
+<li>软件是编译安装，所以更加适合自己的系统，更加稳定，效率更高</li>
+<li>卸载方便</li>
+<li>安装过程步骤多，尤其装较大软件集合的时候</li>
+<li>编译过程时间较长，比二进制长</li>
+</ul>
+<h3 id="rpm包"><a href="#rpm包" class="headerlink" title="rpm包"></a>rpm包</h3><p>也叫 二进制 包，系统默认包<br>是将源码包经过编译后的二进制包<br>windows中的软件包是经过编译的，是二进制包<br>优点和缺点：</p>
+<ul>
+<li>包管理系统简单，安装，升级，查询，卸载简单</li>
+<li>安装速度比源码包快</li>
+<li>经过编译，不能看到源码</li>
+<li>功能依赖不如源码包灵活</li>
+<li>依赖性，一个包依赖另一个包，需要取装另一个包，另一个包又依赖其他几个包等</li>
+</ul>
+<h3 id="脚本安装包"><a href="#脚本安装包" class="headerlink" title="脚本安装包"></a>脚本安装包</h3><p>其实linux中就rpm包和源码包两种，脚本安装包就是把复杂的安装过程写成程序脚本，实际安装的还是源码包或二进制包</p>
+<h3 id="源码包和rpm包选择？"><a href="#源码包和rpm包选择？" class="headerlink" title="源码包和rpm包选择？"></a>源码包和rpm包选择？</h3><p>应该rpm包是别人已经编译好的，他不一定最适合我的机器，所以，对于大型服务，有很多访问的最好使用源码包</p>
+<h1 id="rpm命令管理"><a href="#rpm命令管理" class="headerlink" title="rpm命令管理"></a>rpm命令管理</h1><h2 id="rpm包的来源"><a href="#rpm包的来源" class="headerlink" title="rpm包的来源"></a>rpm包的来源</h2><p>如果通过光盘来的，挂载<br>/mnt/cdrom/Packages</p>
+<h2 id="rpm包命名规则"><a href="#rpm包命名规则" class="headerlink" title="rpm包命名规则"></a>rpm包命名规则</h2><p>软件包名-软件版本-软件发布次数.适合的linux平台.适合的硬件平台.rpm<br>例如<br>httpd-2.2.15-15.el6.centos.1.i686.rpm<br>jdk-7u80-linux-x64.rpm</p>
+<h2 id="rpm包的依赖性"><a href="#rpm包的依赖性" class="headerlink" title="rpm包的依赖性"></a>rpm包的依赖性</h2><h2 id="包名和包全名的概念"><a href="#包名和包全名的概念" class="headerlink" title="包名和包全名的概念"></a>包名和包全名的概念</h2><p><code>httpd-2.2.15-15.el6.centos.1.i686.rpm</code>是包全名，其中的<code>httpd</code>是包名<br>包全名：操作的包是没有安装的软件包时，使用包全名<br>包名：操作已经安装的软件包时，使用包名，是搜索<code>/var/lib/rpm/</code>中的数据库</p>
+<h2 id="rpm安装"><a href="#rpm安装" class="headerlink" title="rpm安装"></a>rpm安装</h2><p><code>rpm -ivh package_full_name.rpm</code><br>-i 安装<br>-v 显示详细信息<br>-h 显示进度</p>
+<h2 id="升级与卸载"><a href="#升级与卸载" class="headerlink" title="升级与卸载"></a>升级与卸载</h2><p><code>rpm -Uvh package_full_name.rpm</code><br>-U 升级<br><code>rpm -e package_name</code><br>-e 卸载<br>其实卸载也可以手动去删除相关的文件就行，只是通过rpm包装的文件会分布在各个地方，使用命令能方便删</p>
+<h2 id="rpm查询"><a href="#rpm查询" class="headerlink" title="rpm查询"></a>rpm查询</h2><h3 id="查询是否安装"><a href="#查询是否安装" class="headerlink" title="查询是否安装"></a>查询是否安装</h3><p>rpm -q 包名</p>
+<h3 id="查询已经安装的所有rpm包"><a href="#查询已经安装的所有rpm包" class="headerlink" title="查询已经安装的所有rpm包"></a>查询已经安装的所有rpm包</h3><p>rpm -qa<br>可用管道符通过<code>grep</code>去查</p>
+<h3 id="查询软件包的详细信息"><a href="#查询软件包的详细信息" class="headerlink" title="查询软件包的详细信息"></a>查询软件包的详细信息</h3><p>rpm -qi 包名</p>
+<h3 id="rpm包默认安装位置"><a href="#rpm包默认安装位置" class="headerlink" title="rpm包默认安装位置"></a>rpm包默认安装位置</h3><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/etc/</td>
+<td>配置文件安装目录</td>
+</tr>
+<tr>
+<td>/usr/bin/</td>
+<td>可执行命令安装目录</td>
+</tr>
+<tr>
+<td>/usr/lib/</td>
+<td>程序使用的函数库保存位置</td>
+</tr>
+<tr>
+<td>/usr/share/doc/</td>
+<td>基本软件使用手册保存位置</td>
+</tr>
+<tr>
+<td>/usr/share/man/</td>
+<td>帮助文件保存位置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="查询包中文件安装位置"><a href="#查询包中文件安装位置" class="headerlink" title="查询包中文件安装位置"></a>查询包中文件安装位置</h3><p>rpm -ql 包名</p>
+<h3 id="查询系统文件属于哪个RPM包"><a href="#查询系统文件属于哪个RPM包" class="headerlink" title="查询系统文件属于哪个RPM包"></a>查询系统文件属于哪个RPM包</h3><p>rpm -qf 系统文件名</p>
+<h3 id="查询软件包的依赖性"><a href="#查询软件包的依赖性" class="headerlink" title="查询软件包的依赖性"></a>查询软件包的依赖性</h3><p>rpm -qR 包名<br>-R 查询软件包的依赖性<br>-p 查询未安装包的信息</p>
+<h2 id="RPM包校验"><a href="#RPM包校验" class="headerlink" title="RPM包校验"></a>RPM包校验</h2><p>rpm -V 包名<br>可以返回这个包中哪些文件被人修改过，即便是注释改变也一样会报<br>例如<br><code>S.5....T. c /etc/httpd/conf/httpd.conf</code><br>验证信息对应表：<br>| S    | 文件大小是否改变                  |<br>| —- | ————————- |<br>| M    | 文件类型或者文件权限（rwx）是否改变       |<br>| 5    | 文件MD5校验和是否改变（相当于文件内容是否改变） |<br>| D    | 设备主从代码是否改变                |<br>| L    | 文件路径是否改变                  |<br>| U    | 文件所有者是否改变                 |<br>| G    | 文件所属组是否改变                 |<br>| T    | 文件修改时间是否改变                |<br>| .    | 没有改变                |<br><code>c</code> 代表文件类型；对应表<br>| c    | 配置文件(config file)              |<br>| —- | ————————- |<br>| d    | 普通文件(documentation)     |<br>| g    | ghost file 鬼文件，表示不该被rpm包含 |<br>| r    | 描述文件(read me)                |<br>| L    | 授权文件 (license file)                  |</p>
+<h2 id="rpm包中文件提取"><a href="#rpm包中文件提取" class="headerlink" title="rpm包中文件提取"></a>rpm包中文件提取</h2><p>rpm2cpio 包全名 | cpio -idv.文件绝对路径<br>-rpm2cpio 将rpm包转换为cpio格式的命令<br>-cpio 一个标准工具<br>一般用于，不小心删除了某个命令；从别的包提取过来<br>例如 现在不小心删除了 <code>/bin/ls</code> 命令<br><code>rpm -qf /bin/ls</code>先查询文件属于哪个包<br><code>rpm2cpio /mnt/cdrom/Packages/coreutils-8.4-19.el6.i686.rpm | cpio -idv ./bin/ls</code> 提取RPM包中的ls命令到当前目录的/bin/ls 下<br><code>cp /root/bin/ls /bin/</code> 把ls文件复制回去，修复文件丢失</p>
+<h1 id="yum在线管理"><a href="#yum在线管理" class="headerlink" title="yum在线管理"></a>yum在线管理</h1><p>官方提供服务器，将所有软件包都放到官方服务器上，当进行yum在线安装的时候，可以自动解决依赖性问题</p>
+<h2 id="yum源文件"><a href="#yum源文件" class="headerlink" title="yum源文件"></a>yum源文件</h2><p>位置：<code>/etc/yum.repos.d/</code><br>文件：<code>CentOS-Base.repo</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[base]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Base - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line">        http://mirrors.cloud.aliyuncs.com/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[base]</td>
+<td>容器名称</td>
+</tr>
+<tr>
+<td>name</td>
+<td>容器说明，可以自己随便写</td>
+</tr>
+<tr>
+<td>mirrorlist</td>
+<td>镜像站点</td>
+</tr>
+<tr>
+<td>baseurl</td>
+<td>yum源服务器地址，默认是CentOS官方yum源服务器</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>次容器是否生效，不写默认生效 ；1：生效；0：不生效</td>
+</tr>
+<tr>
+<td>gpgcheck</td>
+<td>1 指rpm数字证书生效，0 不生效</td>
+</tr>
+<tr>
+<td>gpgkey</td>
+<td>数字证书公钥文件保存位置</td>
+</tr>
+</tbody>
+</table>
+<h2 id="光盘搭建yum源"><a href="#光盘搭建yum源" class="headerlink" title="光盘搭建yum源"></a>光盘搭建yum源</h2><p>yum源默认是用网络来作为yum源；如果不想通过网络，如何使用yum源？可以搭建本地yum源，使用光盘等<br><code>mkdir /mnt/cdrom/</code> 建立挂载点<br><code>mount /dev/cdrom /mnt/cdrom/</code> 挂载光盘<br><code>cd /etc/yum.repos.d</code> 进入yum源目录<br><code>mv CentOS-Base.repo CentOS-Base.repo.bak</code> 是在线yum源失效，模拟，或者改文件内容 <code>enabled = 0</code><br><code>vi CentOS-Media.repo</code> 修改光盘的yum源，使其生效<br>接下来将<code>baseurl</code> 项改为<br><code>baseurl = file:///mnt/cdrom</code> 改为光盘挂载点地址<br><code>enabled = 1</code> 把enabled 改为1 使其生效</p>
+<h2 id="yum命令"><a href="#yum命令" class="headerlink" title="yum命令"></a>yum命令</h2><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p><code>yum list</code> 查询所有可用软件包列表<br><code>yum search 关键字</code> 搜索服务器上所有关键字相关的包</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yum -y install 包名</code><br>-y自动回答yes</p>
+<h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><p><code>yum -y update 包名</code><br>-y 自动回答yes</p>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p><code>yum -y remove 包名</code></p>
+<h3 id="yum软件组管理命令"><a href="#yum软件组管理命令" class="headerlink" title="yum软件组管理命令"></a>yum软件组管理命令</h3><p><code>yum grouplist</code> 列出所有可用的软件组列表<br><code>yum groupinstall &quot;软件组名&quot;</code> 安装指定软件组，软件组名可有<code>yum grouplist</code>查出<br><code>yum groupremove &quot;软件组名&quot;</code> 卸载指定软件组</p>
+<h1 id="源码包管理"><a href="#源码包管理" class="headerlink" title="源码包管理"></a>源码包管理</h1><p>源码包和rpm包区别<br>安装之前的区别：概念上的区别<br>安装之后的区别：安装位置不同</p>
+<h2 id="源码包安装位置"><a href="#源码包安装位置" class="headerlink" title="源码包安装位置"></a>源码包安装位置</h2><p>任意，但是一般我们把它放在<code>/usr/local/</code>中<br>源码包没有卸载命令，需要找到文件位置，手动删除</p>
+<h2 id="源码包安装"><a href="#源码包安装" class="headerlink" title="源码包安装"></a>源码包安装</h2><ol>
+<li>安装C语言编译器—gcc</li>
+<li>下载源码包—官方网站下载</li>
+<li>解压缩下载的源码包<code>tar</code></li>
+<li>进入源码包<code>cd</code></li>
+<li>执行<code>./configure</code>类似的构建文件配置与检查，可以通过<code>./configure --help</code> 查看帮助，定义需要的功能选项，检测环境是否符合安装要求；把定义好的功能选项和检测系统环境信息都写入Makefile文件，便于后续的编辑</li>
+<li>指定安装位置例如 <code>./configure --prefix=/usr/local/apache2</code></li>
+<li><code>make</code>编译 –直接在当前目录下<code>make</code></li>
+<li><code>make install</code></li>
+</ol>
+<p>源码包的<code>INSTALL</code>一般会有安装说明</p>
+<h2 id="源码包卸载"><a href="#源码包卸载" class="headerlink" title="源码包卸载"></a>源码包卸载</h2><p>直接删除安装的位置目录文件即可</p>
+<h2 id="安装注意事项"><a href="#安装注意事项" class="headerlink" title="安装注意事项"></a>安装注意事项</h2><p>源代码保存位置：/usr/local/src/<br>软件安装位置：/usr/local/</p>
+<h2 id="make编译"><a href="#make编译" class="headerlink" title="make编译"></a>make编译</h2><p><code>make clean</code> 万一报错，可以使用这个命令清除<br><code>make install</code> 编译安装 如果编译安装出错，不仅要<code>make clean</code>，还要删除<code>/usr/local/</code>下的文件夹</p>
+<h1 id="脚本安装包-1"><a href="#脚本安装包-1" class="headerlink" title="脚本安装包"></a>脚本安装包</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://donscoco.github.io/2018/10/25/HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1034,7 +1289,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
