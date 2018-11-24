@@ -870,6 +870,7 @@
 <h2 id="last"><a href="#last" class="headerlink" title="last"></a>last</h2><p>可以查看系统中所有的用户登陆信息和系统重启信息<br>这个可以发现有黑客进入了你的计算机<br><code>last</code>命令默认读取的是 /var/log/wtmp 文件数据<br>lastlog 记录的是系统所有用户的最后一次登陆<br><code>lastlog</code> 命令默认读取的是 /var/log/lastlog 文件</p>
 <h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h2><p>su [用户名]<br>之后输入相应密码即可</p>
 <h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>useradd<br>useradd 用户名<br>passwd 目标用户名    –给指定用户名设置密码<br><img src="https://image.ibb.co/b4pZsA/image.png" alt="img"></p>
+<p>useradd -G donscoco_group donscoco2 –添加用户的时候指定用户分组，没有指定分组系统会默认添加一个和用户名一样的分组</p>
 <h2 id="修改用户账户"><a href="#修改用户账户" class="headerlink" title="修改用户账户"></a>修改用户账户</h2><p>usermod –l donscoco dons –将用户的用户名<code>dons</code>改为<code>donscoco</code><br>usermod –g dons_group donscoco –将用户 donscoco 加入到 dons_group组中</p>
 <h2 id="删除用户账户"><a href="#删除用户账户" class="headerlink" title="删除用户账户"></a>删除用户账户</h2><p>userdel donscoco –删除用户 <code>donscoco</code><br>userdel –r donscoco –删除用户，同时删除他的工作目录</p>
 <h2 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h2><p>id donscoco  –查找<code>donscoco</code>的信息</p>
