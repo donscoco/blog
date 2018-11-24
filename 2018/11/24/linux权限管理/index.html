@@ -94,13 +94,13 @@
 
 
 
-<meta name="description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多linux相关知识可访问 http://linux.vbird.org/ 学习 文件基本权限 常见文件类型有7种，除了上面3种，还有套接字文件，管道符文件系统文件等 基本权限的作用读r    写w     执行x  关于目录和文件的权限之间的关系，联系文件在硬件中的分区，区块来思考；例如，我对一个文件没有任何权限，但是我对当">
+<meta name="description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多linux相关知识可访问 http://linux.vbird.org/ 学习 文件基本权限">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux权限管理">
 <meta property="og:url" content="https://donscoco.github.io/2018/11/24/linux权限管理/index.html">
 <meta property="og:site_name" content="donscoco">
-<meta property="og:description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多linux相关知识可访问 http://linux.vbird.org/ 学习 文件基本权限 常见文件类型有7种，除了上面3种，还有套接字文件，管道符文件系统文件等 基本权限的作用读r    写w     执行x  关于目录和文件的权限之间的关系，联系文件在硬件中的分区，区块来思考；例如，我对一个文件没有任何权限，但是我对当">
+<meta property="og:description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多linux相关知识可访问 http://linux.vbird.org/ 学习 文件基本权限">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://image.ibb.co/n2YYkV/image.png">
 <meta property="og:image" content="https://image.ibb.co/c6iqVV/ls.png">
@@ -111,10 +111,10 @@
 <meta property="og:image" content="https://image.ibb.co/kRcqXA/aclMask.png">
 <meta property="og:image" content="https://image.ibb.co/ixKPcA/shadow.png">
 <meta property="og:image" content="https://image.ibb.co/b7bCxA/setUID.png">
-<meta property="og:updated_time" content="2018-11-24T11:31:43.261Z">
+<meta property="og:updated_time" content="2018-11-24T12:21:19.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux权限管理">
-<meta name="twitter:description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多linux相关知识可访问 http://linux.vbird.org/ 学习 文件基本权限 常见文件类型有7种，除了上面3种，还有套接字文件，管道符文件系统文件等 基本权限的作用读r    写w     执行x  关于目录和文件的权限之间的关系，联系文件在硬件中的分区，区块来思考；例如，我对一个文件没有任何权限，但是我对当">
+<meta name="twitter:description" content="前言这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记更多linux相关知识可访问 http://linux.vbird.org/ 学习 文件基本权限">
 <meta name="twitter:image" content="https://image.ibb.co/n2YYkV/image.png">
 
 
@@ -401,6 +401,7 @@
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这里只是在学习linux相关知识过程中，对常用命令做的一个总结笔记<br>更多linux相关知识可访问 <a href="http://linux.vbird.org/" target="_blank" rel="noopener">http://linux.vbird.org/</a> 学习</p>
 <h1 id="文件基本权限"><a href="#文件基本权限" class="headerlink" title="文件基本权限"></a>文件基本权限</h1><p><img src="https://image.ibb.co/n2YYkV/image.png" alt="img"><br><img src="https://image.ibb.co/c6iqVV/ls.png" alt="img"></p>
+<a id="more"></a>
 <p>常见文件类型有7种，除了上面3种，还有套接字文件，管道符文件系统文件等</p>
 <h2 id="基本权限的作用"><a href="#基本权限的作用" class="headerlink" title="基本权限的作用"></a>基本权限的作用</h2><p>读<code>r</code>    写<code>w</code>     执行<code>x</code></p>
 <ol>
