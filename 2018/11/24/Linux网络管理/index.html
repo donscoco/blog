@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ThreadPool," />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -94,20 +94,21 @@
 
 
 
-<meta name="description" content="A simple example 123456789private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));...executor.execute(new Runnable() &amp;#123;    @Override    public">
-<meta name="keywords" content="ThreadPool">
+<meta name="description" content="linux网络配置linux配置IP地址ifconfig命令临时配置IP地址ifconfig:查看与配置网络状态命令；相当于windows中的 ipconfigifconfig eth0 192.168.0.200 netmask 255.255.255.0–临时设置eth0网卡的ip地址和子网掩码">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a useful tip --- thread pools">
-<meta property="og:url" content="https://donscoco.github.io/2018/10/18/threadPool/index.html">
+<meta property="og:title" content="Linux网络管理">
+<meta property="og:url" content="https://donscoco.github.io/2018/11/24/Linux网络管理/index.html">
 <meta property="og:site_name" content="donscoco">
-<meta property="og:description" content="A simple example 123456789private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));...executor.execute(new Runnable() &amp;#123;    @Override    public">
+<meta property="og:description" content="linux网络配置linux配置IP地址ifconfig命令临时配置IP地址ifconfig:查看与配置网络状态命令；相当于windows中的 ipconfigifconfig eth0 192.168.0.200 netmask 255.255.255.0–临时设置eth0网卡的ip地址和子网掩码">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://on-img.com/chart_image/5bc874d0e4b0fe81b66484ac.png">
-<meta property="og:updated_time" content="2018-11-23T11:46:14.910Z">
+<meta property="og:image" content="https://i.ibb.co/bvvq5bX/netstat.png">
+<meta property="og:image" content="https://i.ibb.co/rHT68LF/ssh.png">
+<meta property="og:updated_time" content="2018-11-25T10:21:32.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="a useful tip --- thread pools">
-<meta name="twitter:description" content="A simple example 123456789private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));...executor.execute(new Runnable() &amp;#123;    @Override    public">
-<meta name="twitter:image" content="http://on-img.com/chart_image/5bc874d0e4b0fe81b66484ac.png">
+<meta name="twitter:title" content="Linux网络管理">
+<meta name="twitter:description" content="linux网络配置linux配置IP地址ifconfig命令临时配置IP地址ifconfig:查看与配置网络状态命令；相当于windows中的 ipconfigifconfig eth0 192.168.0.200 netmask 255.255.255.0–临时设置eth0网卡的ip地址和子网掩码">
+<meta name="twitter:image" content="https://i.ibb.co/bvvq5bX/netstat.png">
 
 
 
@@ -136,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="https://donscoco.github.io/2018/10/18/threadPool/"/>
+  <link rel="canonical" href="https://donscoco.github.io/2018/11/24/Linux网络管理/"/>
 
 
 
 
 
-  <title>a useful tip --- thread pools | donscoco</title>
+  <title>Linux网络管理 | donscoco</title>
   
 
 
@@ -313,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://donscoco.github.io/2018/10/18/threadPool/">
+    <link itemprop="mainEntityOfPage" href="https://donscoco.github.io/2018/11/24/Linux网络管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="donscoco">
@@ -330,7 +331,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">a useful tip --- thread pools</h2>
+          <h2 class="post-title" itemprop="name headline">Linux网络管理</h2>
         
 
         <div class="post-meta">
@@ -342,8 +343,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-18T00:00:00+08:00">
-                2018-10-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-24T00:00:00+08:00">
+                2018-11-24
               </time>
             
 
@@ -361,9 +362,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/18/threadPool/#comments" itemprop="discussionUrl">
+                <a href="/2018/11/24/Linux网络管理/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/18/threadPool/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/11/24/Linux网络管理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,77 +392,46 @@
       
 
       
-        <h3 id="A-simple-example"><a href="#A-simple-example" class="headerlink" title="A simple example"></a>A simple example</h3><hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private Executor executor = new ThreadPoolExecutor(4, 10, 30, TimeUnit.SECONDS, new ArrayBlockingQueue(500));</span><br><span class="line">...</span><br><span class="line">executor.execute(new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">        <span class="keyword">function</span>(...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">..</span><br></pre></td></tr></table></figure>
-<h3 id="Benefits-of-using-thread-pools"><a href="#Benefits-of-using-thread-pools" class="headerlink" title="Benefits of using thread pools"></a>Benefits of using thread pools</h3><hr>
-<ul>
-<li>Reduce resource consumption —Reduce the consumption of thread creation and destruction by reusing the created threads.</li>
-<li>Improve response speed</li>
-<li>Improving thread manageability —Monitoring and tuning</li>
-</ul>
+        <h1 id="linux网络配置"><a href="#linux网络配置" class="headerlink" title="linux网络配置"></a>linux网络配置</h1><h2 id="linux配置IP地址"><a href="#linux配置IP地址" class="headerlink" title="linux配置IP地址"></a>linux配置IP地址</h2><h3 id="ifconfig命令临时配置IP地址"><a href="#ifconfig命令临时配置IP地址" class="headerlink" title="ifconfig命令临时配置IP地址"></a>ifconfig命令临时配置IP地址</h3><p>ifconfig:查看与配置网络状态命令；相当于windows中的 ipconfig<br>ifconfig eth0 192.168.0.200 netmask 255.255.255.0–临时设置eth0网卡的ip地址和子网掩码</p>
 <a id="more"></a>
-<h3 id="Use-of-thread-pool"><a href="#Use-of-thread-pool" class="headerlink" title="Use of thread pool"></a>Use of thread pool</h3><hr>
-<ol>
-<li><p><strong><em>Creation of thread pool</em></strong><br> we can create a thread pool such like:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new ThreadPoolExecutor(corePoolSize, maximumPoolSize,keepAliveTime, milliseconds,runnableTaskQueue, threadFactory,handler);</span><br></pre></td></tr></table></figure>
-<p> parameter:</p>
-<ul>
-<li><strong>corePoolSize</strong> : When a task is submitted to the thread pool, the thread pool creates a thread to execute the task, even if other idle base threads are able to execute the new tasks. The thread is not created until the number of tasks to be executed is greater than the thread pool’s basic size.</li>
-<li><strong>maximumPoolSize</strong> : The maximum number of threads allowed by thread pool.If the queue is full and the number of threads created is less than the maximum number of threads, the thread pool creates new threads to perform tasks.</li>
-<li><strong>keepAliveTime</strong> : The thread pool’s working threads are free after the idle thread. So if there are many tasks, and each task is executed in a relatively short time, you can adjust this time to improve the utilization of threads.</li>
-<li><strong>milliseconds</strong> : </li>
-<li><strong>runnableTaskQueue</strong> ： Block queue for saving tasks waiting to be excused. It can be as follows:<br>  <em>ArrayBlockingQueue</em><br>  <em>LinkedBlockingQueue</em><br>  <em>SynchronousQueue</em> — A blocking queue that does not store elements. Each insertion operation must wait until another thread calls the removal operation.<br>  <em>PriorityBlockingQueue</em> — An infinite blocking queue with priority</li>
-<li><strong>RejectedExecutionHandler</strong> : When the queue and thread pool are full, indicating that the thread pool is saturated, a strategy must be adopted to handle the new tasks submitted. It can be as follows:<br>  <em>AbortPolicy</em> : throw Exception<br>  <em>CallerRunsPolicy</em> : use only the thread of the caller to run the task.<br>  <em>DiscardOldestPolicy</em> : discard the last task in the queue and perform the current task.<br>  <em>DiscardPolicy</em> : discard</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_8_centos ~]<span class="comment"># ifconfig</span></span><br><span class="line">eth0      Link encap:Ethernet  HWaddr 52:54:00:94:51:EE  </span><br><span class="line">          inet addr:172.16.0.8  Bcast:172.16.15.255  Mask:255.255.240.0</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:4720653 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:4873615 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:1000 </span><br><span class="line">          RX bytes:3306184967 (3.0 GiB)  TX bytes:3313174495 (3.0 GiB)</span><br><span class="line"></span><br><span class="line">lo        Link encap:Local Loopback  </span><br><span class="line">          inet addr:127.0.0.1  Mask:255.0.0.0</span><br><span class="line">          UP LOOPBACK RUNNING  MTU:65536  Metric:1</span><br><span class="line">          RX packets:413 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:413 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:0 </span><br><span class="line">          RX bytes:22923 (22.3 KiB)  TX bytes:22923 (22.3 KiB)</span><br></pre></td></tr></table></figure>
+<p>这里显示的两块<code>eth0</code>和<code>lo</code>是linux中的两块网卡<br><code>lo</code>是每个服务器都有的，没有实际使用，只用来表示，当前协议是正常的<br><code>Link encap:Ethernet</code>当前网络类型是以太网<br><code>HWaddr 52:54:00:94:51:EE</code>网卡物理地址MAC<br><code>inet addr:172.16.0.8  Bcast:172.16.15.255  Mask:255.255.240.0</code> 当前ip地址，广播地址，子网掩码<br><code>UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</code> 当前网卡参数<br><code>RX packets:4720653 errors:0 dropped:0 overruns:0 frame:0</code> 当前接收到的数据包<br><code>TX packets:4873615 errors:0 dropped:0 overruns:0 carrier:0</code>当前发送的数据包<br><code>RX bytes:3306184967 (3.0 GiB)  TX bytes:3313174495 (3.0 GiB)</code>接收数据包总大小和发送数据包的总大小<br><code></code></p>
+<h3 id="setup工具永久配置IP地址"><a href="#setup工具永久配置IP地址" class="headerlink" title="setup工具永久配置IP地址"></a>setup工具永久配置IP地址</h3><p><code>setup</code>是红帽专有的图形化工具，不用setup也可以使用修改linux网络配置文件<br><code>service network restart</code>使修改生效</p>
+<h1 id="网络配置文件"><a href="#网络配置文件" class="headerlink" title="网络配置文件"></a>网络配置文件</h1><h2 id="网卡信息文件"><a href="#网卡信息文件" class="headerlink" title="网卡信息文件"></a>网卡信息文件</h2><p><code>/etc/sysconfig/network-scripts/ifcfg-eth0</code><br>内容如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_8_centos ~]<span class="comment"># cat /etc/sysconfig/network-scripts/ifcfg-eth0</span></span><br><span class="line"><span class="comment"># Created by cloud-init on instance boot automatically, do not edit.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEVICE=eth0</span><br><span class="line">HWADDR=52:54:00:94:51:ee</span><br><span class="line">NM_CONTROLLED=no</span><br><span class="line">ONBOOT=yes</span><br><span class="line">TYPE=Ethernet</span><br><span class="line">USERCTL=no</span><br><span class="line">PERSISTENT_DHCLIENT=yes</span><br></pre></td></tr></table></figure>
+<p>对于网卡信息的配置通常包括：配置IP地址、子网掩码和网关。网卡信息保存在网卡配置文件中。网卡配置文件位于/etc/sysconfig/network-scripts目录下。一块网卡对应一个网卡配置文件，配置文件命名规则：<br>ifcfg-网卡类型以及网卡的序列号<br>由于以太网卡类型是eth，网卡的序列号从0开始，所以第一块网卡的配置文件名称为ifcfg-eth0，第二块网卡为ifcfg-eth1，以此类推。<br>网卡配置文件中常用配置文件名的还以如下：<br>|参数项|作用描述|<br>|-|-|<br>|DEVICE=eth0|定义该网卡的识别名称|<br>|BOOTPROTO=dhcp|是否自动获取IP（none，static，dhcp）static/none：代表固定的IP地址；bootp/dhcp：通过BOOTP或DHCP协议取得IP地址|<br>|HWADDR=52:54:00:94:51:ee|该网卡的MAC地址|<br>|HWADDR=52:54:00:94:51:ee|该网卡的MAC地址|<br>|ONBOOT=yes|启动network服务时，是否启用该网卡。当RedHat系统启动network服务时，network服务一次读取保存于/etc/sysconfig/network-scripts/目录下所有网卡的配置文件。如果网卡配置文件的ONBOOT设置为yes，则network服务就会调用ifup命令启动该网卡；如果网卡的配置文件的ONBOOT参数为no，network会跳过启动这个网卡的工作。|<br>|TYPE=Ethernet|网卡的类型，以太网|<br>|USERCTL=no|是否允许普通用户启动或者停止该网卡，一般设置no只能root操作|<br>|IPV6INIT=no|是否在该网卡上启动IPV6的功能|<br>|PEERDNS=yes|是否允许网卡在启动时向DHCP服务器查询DNS信息，并自动覆盖/etc/resolv.conf配置文件|<br>|IPADDR=192.168.1.55|静态方式指定网卡的IP地址，置项用于指定该网卡的静态IP地址，此时BOOTPROTO必须为static或者none|<br>|NETMASK=255.255.255.0|定义该网卡的子网掩码|<br>|GATEWAY=192.168.1.1|设置网络的默认网关|<br>|DNS1=192.168.128.5|指定主要的DNS服务器地址|<br>|DNS2=192.168.128.6|指定备用的DNS服务器地址|<br>|UUID=|唯一识别码|<br>|MTU=1500|设置网卡的MAC帧最大传输单位大小|</p>
+<p><code>BOOTPROTO=dhcp</code> 如果局域网内没有DHCP服务器，则无法使用</p>
+<p>更多参考：<br><a href="https://www.cnblogs.com/wolfkingzzy/archive/2012/04/07/Linux%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.html" target="_blank" rel="noopener">https://www.cnblogs.com/wolfkingzzy/archive/2012/04/07/Linux%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.html</a><br><a href="https://www.imooc.com/video/5223" target="_blank" rel="noopener">https://www.imooc.com/video/5223</a></p>
+<h2 id="主机名文件"><a href="#主机名文件" class="headerlink" title="主机名文件"></a>主机名文件</h2><p><code>/etc/sysconfig/network</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_8_centos ~]<span class="comment"># cat /etc/sysconfig/network</span></span><br><span class="line"><span class="comment"># Created by cloud-init on instance boot automatically, do not edit.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">NETWORKING=yes</span><br><span class="line">HOSTNAME=VM_0_8_centos</span><br></pre></td></tr></table></figure>
+<p><code>NETWORKING</code>必须为yes，为no，网络无法工作<br><code>HOSTNAME</code>为主机名，在windows中相同局域网下不能有同样的主机名，而linux中无所谓；</p>
+<h2 id="DNS配置文件"><a href="#DNS配置文件" class="headerlink" title="DNS配置文件"></a>DNS配置文件</h2><p><code>/etc/resolv.conf</code></p>
+<p><code>nameserver</code> 名称服务器，如果有多个，可以空格接上其他的</p>
+<h1 id="linux网络命令"><a href="#linux网络命令" class="headerlink" title="linux网络命令"></a>linux网络命令</h1><h2 id="网络环境查看命令"><a href="#网络环境查看命令" class="headerlink" title="网络环境查看命令"></a>网络环境查看命令</h2><h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><h3 id="关闭和启动网卡"><a href="#关闭和启动网卡" class="headerlink" title="关闭和启动网卡"></a>关闭和启动网卡</h3><ul>
+<li>ifdown 网卡设备名（eth0，ol等） –禁用该网卡设备</li>
+<li>ifup 网卡设备名 –启用该网卡设备</li>
 </ul>
-</li>
-<li><p><strong><em>Submission of the task</em></strong><br> We can use execute to submit a task, but the execute method does not return a value, so it is impossible to determine whether the task was successfully executed by the thread pool. The following code shows that the task entered by the execute method is an instance of a Runnable class.</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">threadsPool.execute(new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p> We can also submit a task using the submit method, which returns a future. We can use the future to determine whether the task is successful, get the return value through the future’s get method, block the get method until the task is complete, and block one using the get (long timeout, TimeUnit unit) method. Return immediately after a period of time, and it is possible that the task is not executed.</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;Object&gt; future = executor.submit(harReturnValuetask);</span><br><span class="line">try &#123;</span><br><span class="line">    Object s = future.get();</span><br><span class="line">&#125; catch (InterruptedException e) &#123;</span><br><span class="line">    // handler interruptedException</span><br><span class="line">&#125; catch (ExecutionException e) &#123;</span><br><span class="line">    // handler executionexception</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    executor.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="3">
-<li><strong><em>Closure of thread pool</em></strong><br> We can close the thread pool by calling the shutdown or shutdownNow methods of the thread pool, which traverse the worker threads in the thread pool and then interrupt the thread one by one, so tasks that cannot respond to interruptions may never be terminated.<br> But there are some differences. shutdownNow first sets the state of the thread pool to STOP, then tries to stop all threads executing or suspending tasks, and returns a list of tasks waiting to be executed, whereas shutdownNow just sets the state of the thread pool to SHUTDOWN, and then interrupts all threads that are not executing. Service threads.<br> As long as one of the two closing methods is invoked, the isShutdown method returns true. Calling the isTerminated method returns true when all tasks are closed. As for which method we should invoke to close the thread pool, it should be determined by the task characteristics submitted to the thread pool, usually calling shutdown to close the thread pool, or calling shutdownNow if the task is not necessarily complete.</li>
-</ol>
-<h3 id="Analysis-of-thread-pool"><a href="#Analysis-of-thread-pool" class="headerlink" title="Analysis of thread pool"></a>Analysis of thread pool</h3><hr>
-<ol>
-<li>The main workflow of the thread pool is as follows:<br><img src="http://on-img.com/chart_image/5bc874d0e4b0fe81b66484ac.png" alt=""><br>we can see from the above picture. When a new task is submitted to the thread pool, the processing flow of the thread pool is as follows:<ul>
-<li>First, thread pool determines whether the basic thread pool is full. If it is not full, create a worker thread to perform the task. Full, then enter the next process.</li>
-<li>Secondly, the thread pool determines whether the work queue is full. If not, the new task will be stored in the work queue. Full, then enter the next process.</li>
-<li>Finally, the thread pool determines whether the entire thread pool is full. If it is not full, a new worker thread is created to perform the task, and when it is full, the saturation policy is given to handle the task.</li>
-</ul>
-</li>
-<li><p>Source code</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void execute(Runnable <span class="built_in">command</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">command</span> == null)</span><br><span class="line">        throw new NullPointerException();</span><br><span class="line">    <span class="keyword">if</span> (poolSize &gt;= corePoolSize || !addIfUnderCorePoolSize(<span class="built_in">command</span>)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (runState == RUNNING &amp;&amp; workQueue.offer(<span class="built_in">command</span>)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (runState != RUNNING || poolSize == 0)</span><br><span class="line">            ensureQueuedTaskHandled(<span class="built_in">command</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (!addIfUnderMaximumPoolSize(<span class="built_in">command</span>))</span><br><span class="line">        reject(<span class="built_in">command</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Working thread<br> When a thread pool creates a thread, it encapsulates the thread as a worker thread, which, after executing the task, loops indefinitely to fetch the task in the work queue for execution. We can see this from the run method of Worker:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        Runnable task = firstTask;</span><br><span class="line">        firstTask = null;</span><br><span class="line">        <span class="keyword">while</span> (task != null || (task = getTask()) != null) &#123;</span><br><span class="line">            runTask(task);</span><br><span class="line">            task = null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        workerDone(this);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="Rational-configuration-of-thread-pool"><a href="#Rational-configuration-of-thread-pool" class="headerlink" title="Rational configuration of thread pool"></a>Rational configuration of thread pool</h3><hr>
-<p>To configure thread pools reasonably, we must first analyze the characteristics of tasks, which can be analyzed from the following aspects:</p>
-<ul>
-<li><p><strong><em>Nature of task</em></strong> : CPU intensive tasks, IO intensive tasks and hybrid tasks.<br>  Tasks with different tasks can be processed separately from different sizes of thread pools. CPU intensive tasks are configured as small as possible, such as thread pools that configure Ncpu+1 threads. IO-intensive tasks configure as many threads as possible, such as 2 * Ncpu, because threads are not always executing tasks. Hybrid tasks, if they can be split, are split into a CPU-intensive task and an IO-intensive task. As long as the time difference between the two tasks is not too large, the throughput after decomposition is higher than that of serial execution. If the time difference between the two tasks is too large, it is not necessary. Decompose. We can get the CPU number of the current device through the Runtime.getRuntime ().AvailableProcessors () method.</p>
-</li>
-<li><p><strong><em>Priority of tasks</em></strong> :<br>  Tasks with different priorities can be handled using priority queue PriorityBlockingQueue. It allows high-priority tasks to be executed first, and it is important to note that low-priority tasks may never be executed if high-priority tasks are always submitted to the queue.</p>
-</li>
-<li><p><strong><em>Task execution time</em></strong> :<br>  Tasks with different execution times can be handled by thread pools of different sizes, or priority queues can be used to allow tasks with short execution times to execute first.</p>
-</li>
-<li><p><strong><em>Task dependency</em></strong> : Is it dependent on other system resources, such as database connection?<br>  Depending on the database connection pool task, because threads need to wait for the database to return the results after submitting SQL, if the longer the wait, the longer the CPU idle time, then the number of threads should be set, so as to better use the CPU.</p>
-</li>
-</ul>
-<p>It is suggested that bounded queues be used. Bounded queues can increase the stability and early warning capability of the system, and can be set up as large as needed, such as several thousand.It is suggested that bounded queues be used. Bounded queues can increase the stability and early warning capability of the system, and can be set up as large as needed, such as several thousand. If unbounded queues are used, if the system goes wrong, memory may be crammed, affecting other systems.</p>
-<h3 id="Thread-pool-monitoring"><a href="#Thread-pool-monitoring" class="headerlink" title="Thread pool monitoring"></a>Thread pool monitoring</h3><hr>
-<p>Monitor the parameters provided by thread pool. There are properties in the thread pool that can be used when monitoring thread pools.</p>
-<ul>
-<li><strong><em>taskCount</em></strong><br>  The number of tasks that thread pools need to perform.</li>
-<li><strong><em>completedTaskCount</em></strong><br>  The number of tasks that the thread pool has completed in the process of running. Less than or equal to taskCount.</li>
-<li><strong><em>largestPoolSize</em></strong><br>  The maximum number of threads that thread pool has ever created. This data can be used to see if the line pool is full.</li>
-<li><strong><em>getPoolSize</em></strong><br>  The number of threads in the thread pool.<br>-<strong><em>getActiveCount</em></strong><br>  Gets the number of threads of activity.</li>
-</ul>
-<p>Monitor by extending thread pool. By inheriting the thread pool and overwriting the beforeExecute, afterExecute, and terminated methods of the thread pool, we can do something before, after, and before the thread pool is closed. For example, the average execution time, maximum execution time and minimum execution time of monitoring tasks. These methods are empty methods in the online pool. Such as:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protected void beforeExecute(Thread t, Runnable r) &#123; &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="More"><a href="#More" class="headerlink" title="More"></a>More</h3><hr>
-<p>Transmission gate : <a href="http://ifeve.com/java-concurrency-thread-directory/" target="_blank" rel="noopener">ifeve</a><br>Transmission gate : <a href="https://www.jianshu.com/p/ade771d2c9c0" target="_blank" rel="noopener">a tiny husky</a><br>Transmission gate : <a href="https://www.jianshu.com/u/7355b41938a6" target="_blank" rel="noopener">jonny</a><br>Transmission gate : <a href="https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ThreadPoolExecutor.html" target="_blank" rel="noopener">Oracle</a><br>Transmission gate : <a href="https://blog.csdn.net/qq_25806863/article/details/71126867" target="_blank" rel="noopener">csdn</a><br>Transmission gate : <a href="https://segmentfault.com/a/1190000011527245" target="_blank" rel="noopener">csdn</a></p>
+<h3 id="查询网络状态"><a href="#查询网络状态" class="headerlink" title="查询网络状态"></a>查询网络状态</h3><h4 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h4><p>netstat [option]<br>-t 列出TCP协议端口<br>-u 列出UDP协议端口<br>-n 不使用域名与服务器名，而使用ip地址和端口号<br>-l 仅列出在监听状态的网络服务<br>-a 列出所有网络连接<br>-rn 相当于 <code>route -n</code></p>
+<p><code>netstat -tuln</code><br><img src="https://i.ibb.co/bvvq5bX/netstat.png" alt="img"><br>看到在监听对应的端口号知道了对应服务开启了</p>
+<p><code>netstat -an</code><br>![img]<br>可以看到自己写的一些程序</p>
+<p>想查看<code>ESTABLISHED</code>连接数<code>netstat -an |grep ESTABLISHED | wc -l</code><br>这里<code>wc -l</code> 看行数</p>
+<h5 id="各项解释"><a href="#各项解释" class="headerlink" title="各项解释"></a>各项解释</h5><p>1、0.0.0.0代表本机上可用的任意地址。 比如0.0.0.0:135 表示本机上所有地址的135端口，这样多ip计算机就不用重复显示了。<br>2、TCP 0.0.0.0:80表示在所有的可用接口上监听TCP80端口<br>3、0.0.0.0为默认路由，即要到达不再路由表里面的网段的包都走0.0.0.0这条规则<br>然后127.0.0.1就是表示本机ip地址的意思了。<br>[::]:21表示ipv6的21号端口的意思。<br>还有UDP的外部链接怎么都是<em>:</em>呢？<br><em>：</em>是网址的通配符，就是192.168.15.12，这个类型的整体描述。</p>
+<p>各状态意义表<br>|statu|description|<br>|-|-|<br>|LISTEN|(Listening for a connection.)侦听TCP端口的连接请求|<br>|SYN-SENT|(Active; sent SYN. Waiting for a matching connection request after having sent a connection request.)发送连接请求后等待匹配的连接请求|<br>|SYN-RECEIVED|(Sent and received SYN. Waiting for a confirming connection request acknowledgment after having both received and sent connection requests.)收到和发送一个连接请求后等待对方对连接请求的确认|<br>|ESTABLISHED|(Connection established.)代表一个打开的连接|<br>|FIN-WAIT-1|(Closed; sent FIN.)等待远程TCP连接中断请求，或先前的连接中断请求的确认|<br>|FIN-WAIT-2|(Closed; FIN is acknowledged; awaiting FIN.)从远程TCP等待连接中断请求|<br>|CLOSE-WAIT|(Received FIN; waiting to receive CLOSE.)等待从本地用户发来的连接中断请求|<br>|CLOSING|(Closed; exchanged FIN; waiting for FIN.)等待远程TCP对连接中断的确认|<br>|LAST-ACK|(Received FIN and CLOSE; waiting for FIN ACK.)等待原来的发向远程TCP的连接中断请求的确认|<br>|TIME-WAIT|(In 2 MSL (twice the maximum segment length) quiet wait after close. )等待足够的时间以确保远程TCP接收到连接中断请求的确认|<br>|CLOSED|(Connection is closed.)没有任何连接状态|</p>
+<h4 id="route"><a href="#route" class="headerlink" title="route"></a>route</h4><p>route [option]<br>-n 查看路由列表</p>
+<h4 id="nslookup"><a href="#nslookup" class="headerlink" title="nslookup"></a>nslookup</h4><p>nslookup 主机名或者ip<br>进行域名或者ip地址解析</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_8_centos ~]<span class="comment"># nslookup dosncoco.github.io</span></span><br><span class="line">Server:         183.60.83.19</span><br><span class="line">Address:        183.60.83.19<span class="comment">#53</span></span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:   dosncoco.github.io</span><br><span class="line">Address: 185.199.109.153</span><br><span class="line">Name:   dosncoco.github.io</span><br><span class="line">Address: 185.199.108.153</span><br><span class="line">Name:   dosncoco.github.io</span><br><span class="line">Address: 185.199.110.153</span><br><span class="line">Name:   dosncoco.github.io</span><br><span class="line">Address: 185.199.111.153</span><br></pre></td></tr></table></figure>
+<p><code>Server</code>DNS服务器地址</p>
+<h2 id="网络测试命令"><a href="#网络测试命令" class="headerlink" title="网络测试命令"></a>网络测试命令</h2><h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><p>ping [option] ip或域名<br>-c ping次数<br>探测指定ip或者域名的网络状况</p>
+<h3 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h3><p>telnet [域名或ip] [端口]<br>远程管理与端口探测命令<br>不加密，相对于的加密：ssh</p>
+<h3 id="traceroute"><a href="#traceroute" class="headerlink" title="traceroute"></a>traceroute</h3><p>traceroute [option] 域名或ip<br>-n 使用ip，不使用域名，速度更快<br>可以追踪路由经过哪里，一般用来路由故障定位（不通）</p>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>wget url<br>下载命令</p>
+<h3 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h3><p>tcpdump -i eth0 -nnX port 21<br>-i 指定网卡接口<br>-nn 将数据包中的域名与服务转为IP和端口<br>-X 以十六进制和ASCII码显示数据包内容<br>port 指定监听端口</p>
+<p>更多：<a href="https://www.imooc.com/video/5454" target="_blank" rel="noopener">https://www.imooc.com/video/5454</a></p>
+<h1 id="远程登录"><a href="#远程登录" class="headerlink" title="远程登录"></a>远程登录</h1><h2 id="SSH-协议原理"><a href="#SSH-协议原理" class="headerlink" title="SSH 协议原理"></a>SSH 协议原理</h2><h3 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h3><p>采用单钥密码系统的加密方法，同一个密钥可以同时用作信息的加密和解密，这种加密方法称为对称加密，也称为单密钥加密</p>
+<h3 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h3><p>又名公开密钥加密算法，需要两个密钥，公开密钥和私有密钥<br><img src="https://i.ibb.co/rHT68LF/ssh.png" alt="img"></p>
+<h3 id="安全外壳协议ssh"><a href="#安全外壳协议ssh" class="headerlink" title="安全外壳协议ssh"></a>安全外壳协议ssh</h3><p>ssh是由非对称加密演变而来的<br><code>ssh username@ip_addr</code><br><code>exit</code>退出<br><code>scp [-r] 用户名@ip:文件路径  本地路径</code> 下载文件 如果是目录要加<code>-r</code><br><code>scp [-r] 本地文件 用户名@ip:上传路径</code> 上传文件 如果是目录要加<code>-r</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_8_centos ~]<span class="comment"># ssh donscoco@47.93.233.184</span></span><br><span class="line">The authenticity of host <span class="string">'47.93.233.184 (47.93.233.184)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 2b:97:15:e1:fa:3c:14:fa:9b:48:48:62:0e:32:d7:6d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>会询问是否下载对方的公钥<br>下载的公钥会放在家目录下的 .ssh 中的 <code>known_hosts</code><br>这里如果对方重新生成公钥或者计算机重装系统之类的。原来的下载在我们这边的公钥会无法使用，只需要删除即可，下次连接的时候又会询问我们是否下载公钥</p>
 
       
     </div>
@@ -479,7 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ThreadPool/" rel="tag"># ThreadPool</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -492,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/10/25/HTTP/" rel="next" title="HTTP protocol">
+                <i class="fa fa-chevron-left"></i> HTTP protocol
               </a>
             
           </div>
@@ -502,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/25/HTTP/" rel="prev" title="HTTP protocol">
-                HTTP protocol <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/24/Linux软件安装管理/" rel="prev" title="Linux软件安装管理">
+                Linux软件安装管理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -683,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-simple-example"><span class="nav-number">1.</span> <span class="nav-text">A simple example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Benefits-of-using-thread-pools"><span class="nav-number">2.</span> <span class="nav-text">Benefits of using thread pools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-of-thread-pool"><span class="nav-number">3.</span> <span class="nav-text">Use of thread pool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis-of-thread-pool"><span class="nav-number">4.</span> <span class="nav-text">Analysis of thread pool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rational-configuration-of-thread-pool"><span class="nav-number">5.</span> <span class="nav-text">Rational configuration of thread pool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-pool-monitoring"><span class="nav-number">6.</span> <span class="nav-text">Thread pool monitoring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More"><span class="nav-number">7.</span> <span class="nav-text">More</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux网络配置"><span class="nav-number">1.</span> <span class="nav-text">linux网络配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux配置IP地址"><span class="nav-number">1.1.</span> <span class="nav-text">linux配置IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig命令临时配置IP地址"><span class="nav-number">1.1.1.</span> <span class="nav-text">ifconfig命令临时配置IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setup工具永久配置IP地址"><span class="nav-number">1.1.2.</span> <span class="nav-text">setup工具永久配置IP地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络配置文件"><span class="nav-number">2.</span> <span class="nav-text">网络配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网卡信息文件"><span class="nav-number">2.1.</span> <span class="nav-text">网卡信息文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主机名文件"><span class="nav-number">2.2.</span> <span class="nav-text">主机名文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">DNS配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux网络命令"><span class="nav-number">3.</span> <span class="nav-text">linux网络命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络环境查看命令"><span class="nav-number">3.1.</span> <span class="nav-text">网络环境查看命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig"><span class="nav-number">3.1.1.</span> <span class="nav-text">ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭和启动网卡"><span class="nav-number">3.1.2.</span> <span class="nav-text">关闭和启动网卡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询网络状态"><span class="nav-number">3.1.3.</span> <span class="nav-text">查询网络状态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#netstat"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">netstat</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#各项解释"><span class="nav-number">3.1.3.1.1.</span> <span class="nav-text">各项解释</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#route"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">route</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nslookup"><span class="nav-number">3.1.3.3.</span> <span class="nav-text">nslookup</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络测试命令"><span class="nav-number">3.2.</span> <span class="nav-text">网络测试命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ping"><span class="nav-number">3.2.1.</span> <span class="nav-text">ping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#telnet"><span class="nav-number">3.2.2.</span> <span class="nav-text">telnet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#traceroute"><span class="nav-number">3.2.3.</span> <span class="nav-text">traceroute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wget"><span class="nav-number">3.2.4.</span> <span class="nav-text">wget</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tcpdump"><span class="nav-number">3.2.5.</span> <span class="nav-text">tcpdump</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程登录"><span class="nav-number">4.</span> <span class="nav-text">远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-协议原理"><span class="nav-number">4.1.</span> <span class="nav-text">SSH 协议原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对称加密算法"><span class="nav-number">4.1.1.</span> <span class="nav-text">对称加密算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非对称加密算法"><span class="nav-number">4.1.2.</span> <span class="nav-text">非对称加密算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全外壳协议ssh"><span class="nav-number">4.1.3.</span> <span class="nav-text">安全外壳协议ssh</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -833,9 +803,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://donscoco.github.io/2018/10/18/threadPool/';
-          this.page.identifier = '2018/10/18/threadPool/';
-          this.page.title = 'a useful tip --- thread pools';
+          this.page.url = 'https://donscoco.github.io/2018/11/24/Linux网络管理/';
+          this.page.identifier = '2018/11/24/Linux网络管理/';
+          this.page.title = 'Linux网络管理';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
