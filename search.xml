@@ -28,14 +28,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[��˼����]]></title>
+    <title><![CDATA[胡思乱想]]></title>
     <url>%2F2018%2F11%2F24%2F%E7%96%91%E9%97%AE%2F</url>
-    <content type="text"><![CDATA[Setting Account Resource Limits�����ڿ�mysql�Ĺٷ��ĵ���ʱ�򣬿�����������û�ÿСʱ�Ĳ�ѯ���������뵽һ�����⣬����ǲ��ǿ�������һЩ����������user֮��ģ�user����ܻ�Զ��ҵ���ṩ�������񣬵��ǣ���һ��һ��ҵ�����ѯ�ѻ����������ˣ��ǻ�Ӱ�쵽������ҵ�����ԣ�����Ƿ������������Ǹ����ܻ��user��ҵ�ҵ��Ĳ�ѯ�����������Լ�ҵ����ӳ٣�Ҳ��Ҫ�ѻ���������Ӱ�쵽����ҵ�� mysql�ٷ��ĵ���https://dev.mysql.com/doc/refman/5.7/en/user-account-management.html —-������С�׵ĺ�˼���롣 ���ݿⱸ��1.shell�ű�2.��ʱ����3.mysqldump]]></content>
+    <content type="text"><![CDATA[Setting Account Resource Limits今天在看mysql的官方文档的时候，看到这个限制用户每小时的查询数量，联想到一个问题，这个是不是可以用作一些基础服务，如user之类的，user库可能会对多个业务提供基础服务，但是，万一有一个业务疯狂查询把基础服务搞挂了，那会影响到其他的业务，所以，这个是否能用来限制那个可能会把user搞挂的业务的查询数量，哪怕自己业务出延迟，也不要把基础服务搞挂影响到其他业务 mysql官方文档：https://dev.mysql.com/doc/refman/5.7/en/user-account-management.html —-以上是小白的胡思乱想。 数据库备份1.shell脚本2.定时任务3.mysqldump]]></content>
       <categories>
         <category>idea</category>
       </categories>
       <tags>
-        <tag>�������߲���Ԥ��</tag>
+        <tag>服务器高并发预防</tag>
       </tags>
   </entry>
   <entry>
