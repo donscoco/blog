@@ -445,11 +445,11 @@
 <li>修改冲突区域 &lt;&lt;&lt;&lt;&lt;  和   &gt;&gt;&gt;&gt;&gt;  的区域</li>
 <li>保存 add 加 commit 直接提交就行了</li>
 </ul>
+<h1 id="在节点中穿梭-—-移动HEAD"><a href="#在节点中穿梭-—-移动HEAD" class="headerlink" title="在节点中穿梭 —-移动HEAD"></a>在节点中穿梭 —-移动HEAD</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;hashcode&gt;</span><br></pre></td></tr></table></figure>
+<p>往以前的方向移 可以通过 git log 拿到 <hashcode><br>往以前的方向移 可以通过 git reflog 拿到 <hashcode></hashcode></hashcode></p>
 <h1 id="处理误删"><a href="#处理误删" class="headerlink" title="处理误删"></a>处理误删</h1><h2 id="本地-远程-文件"><a href="#本地-远程-文件" class="headerlink" title="本地/远程 文件"></a>本地/远程 文件</h2><p>假如删除文件 f<br>首先找回文件的<hashcode>，可以从远端服务器commit历史查看或者将自己的历史查看（git log）<br>checkout 出那个节点的文件 f (文件记得写上路径)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;hashcode&gt; &lt;filename&gt;</span><br></pre></td></tr></table></figure></hashcode></p>
 <p>这个时候我们就得到了那个节点的文件，接下来commit+push到远端就可以了<br>同理，对于误修改也可以这样checkout到原来的版本</p>
-<h2 id="本地-远程-分支"><a href="#本地-远程-分支" class="headerlink" title="本地/远程 分支"></a>本地/远程 分支</h2><h2 id="在节点中穿梭-—-移动HEAD"><a href="#在节点中穿梭-—-移动HEAD" class="headerlink" title="在节点中穿梭 —-移动HEAD"></a>在节点中穿梭 —-移动HEAD</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;hashcode&gt;</span><br></pre></td></tr></table></figure>
-<p>往以前的方向移 可以通过 git log 拿到 <hashcode><br>往以前的方向移 可以通过 git reflog 拿到 <hashcode></hashcode></hashcode></p>
-
+<h2 id="本地-远程-分支"><a href="#本地-远程-分支" class="headerlink" title="本地/远程 分支"></a>本地/远程 分支</h2>
           
         
       
